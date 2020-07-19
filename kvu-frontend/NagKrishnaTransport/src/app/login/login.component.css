@@ -1,0 +1,100 @@
+.container{
+    background-color: darkslategrey;
+    border: 1px whitesmoke solid;
+    border-radius: 10px;
+}
+.title-text{
+    color: white;
+    margin: 25px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.mr{
+    float: right;
+}
+.login{
+    width: 400px;
+    height: 400px;
+    background-color: whitesmoke;
+
+}
+
+  .email-login,.email-signup{
+    position:relative;
+    float: left;
+    width: 100%;
+    height:auto;
+    margin-top: 40px;
+    text-align:center;
+  }
+  .u-form-group{
+    width:100%;
+    margin-bottom: 10px;
+  }
+  .u-form-group input[type="text"],
+  .u-form-group input[type="email"],
+  .u-form-group input[type="password"]{
+    width: calc(60% - 22px);
+    height:45px;
+    outline: none;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    border-radius: 2px;
+    color: #333;
+    font-size:0.8rem;
+    -webkit-transition:all 0.1s linear;
+    -moz-transition:all 0.1s linear;
+    transition:all 0.1s linear;
+  }
+  @media only screen and (min-width: 600px) {
+    .u-form-group input[type="text"],
+    .u-form-group input[type="email"],
+    .u-form-group input[type="password"]{
+      width: calc(60% - 22px);
+    }
+    .container{
+       margin-top: 10vmax;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .u-form-group input[type="text"],
+  .u-form-group input[type="email"],
+  .u-form-group input[type="password"]{
+    width: calc(80% - 22px);
+  }
+  .container{
+      background-color: whitesmoke;
+      height: 100%;
+  }
+  .title{
+    background-color: darkslategrey;
+  }
+}
+@media only screen and (min-height: 736px) {
+    .email-login,.email-signup{
+      margin-top: 15vmax;
+    }
+}
+
+  .u-form-group input:focus{
+    border-color: #358efb;
+  }
+  .u-form-group button{
+    width:50%;
+    background-color: #1CB94E;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 14px 0;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .forgot-password{
+    width:50%;
+    text-align: left;
+    text-decoration: underline;
+    color: #888;
+    font-size: 0.75rem;
+  }

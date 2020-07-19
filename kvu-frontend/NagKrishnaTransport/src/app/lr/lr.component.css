@@ -1,0 +1,10 @@
+.container{
+    margin-top: 10vmax;
+}
+.card{
+    margin-right: 15px;
+    padding: 1.5rem;
+}
+.mr{
+    float: right;
+}
