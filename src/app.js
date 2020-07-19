@@ -21,7 +21,7 @@ MongoClient.connect(url, function(err, db) {
   var dbo = db.db("test1");
   dbo.collection("tester").findOne({}, function(err, result) {
     if (err) throw err;
-    console.log(result.name);
+    if(result) console.log(result.name);
     db.close();
   });
 });
