@@ -3,33 +3,33 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
-
-
-
-
-
+const bodyParser = require('body-parser')
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
 const api = require('./api');
 // 
 
-var url = "mongodb://localhost:27017/";
+// var url = "mongodb://localhost:27017/";
 
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("test1");
-  dbo.collection("tester").findOne({}, function(err, result) {
-    if (err) throw err;
-    if(result) console.log(result.name);
-    db.close();
-  });
-});
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("test1");
+//   dbo.collection("tester").findOne({}, function(err, result) {
+//     if (err) throw err;
+//     if(result) console.log(result.name);
+//     db.close();
+//   });
+// });
 const app = express();
 
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(cors());
+app.use(bodyParser.json());       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => {
