@@ -1,0 +1,53 @@
+<div class="container">
+  <button class="btn btn-sm btn-primary create-bill-btn" data-toggle="modal" data-target="#createBillModal">Create Bill</button>
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let lr of lrList">
+          <div class="card bill-card delay">
+            <div>
+            <input type="checkbox" class="mr card-heading" id="lrChechbox">
+            <h6 class="card-heading">#1202</h6>
+            </div>  
+              <div class="card card-content">
+                  <div class="card-body">
+                    <div class="mr">
+                    <h6>12/02/2020</h6>
+                    <img src="../../assets/LR logo 1.png" width="100px" height="100px">
+                    </div>
+                    <h6 class="card-title">Deccen Cements Ltd</h6>
+                    <p class="card-text">Truck No: <span><b>TS 07 ES 1233</b></span></p>
+                    <p class="card-text">Quantity: <span><b>34.4</b></span></p>
+                    <p class="card-text">Bill No: <span><b>M1050695</b></span></p>
+                    <button class="btn btn-sm btn-link">Edit</button>
+                    <button class="btn btn-sm btn-link danger">Delete</button>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="createBillModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Create Bill</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="billNo">Bill No</label>
+            <input type="text" class="form-control" id="billNo" placeholder="Enter Bill No" aria-describedby="emailHelp">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+</div>

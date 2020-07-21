@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LRComponent } from './lr.component';
+import { LRListComponent } from './lrlist.component';
 
-describe('LRComponent', () => {
-  let component: LRComponent;
-  let fixture: ComponentFixture<LRComponent>;
+describe('LRListComponent', () => {
+  let component: LRListComponent;
+  let fixture: ComponentFixture<LRListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LRComponent ]
+      declarations: [ LRListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LRComponent);
+    fixture = TestBed.createComponent(LRListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

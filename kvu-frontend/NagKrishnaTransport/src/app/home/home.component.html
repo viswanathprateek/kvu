@@ -1,20 +1,111 @@
-<div class="container">
+<div class="container main">
     <div class="row">
-        <div class="col-lg-4" *ngFor="let bill of billsList">
-        <div class="card bill-card delay">
-            <h6 class="card-heading">#M1050695</h6>
-            <div class="card card-content">
-                <div class="card-body">
-                  <h5 class="mr">4,56,000</h5>
-                  <h6 class="card-title">Deccen Cements Ltd</h6>
-                  <p class="card-text">Bill Date: <span><b>11/02/2020</b></span></p>
-                  <p class="card-text">Due Date: <span><b>11/03/2020</b></span></p>
-                  <p class="card-text">No Of Vehicles: <span><b>100</b></span></p>
-                  <button class="btn btn-sm btn-link">Edit</button>
-                  <button class="btn btn-sm btn-link danger">Delete</button>
+        <div class="col-lg-6" *ngFor="let bill of billsList">
+         <div class="card">
+          <div class="bill-heading">
+            <h6>Nag Krishna Transport</h6>
+          </div>
+          <div class="bill-body">
+            <!-- <div class="container">
+              <div class="row">
+                <div class="col-md-3">
+                  <h6>Deccean Cements Ltd</h6>
+                </div>
+                <div class="col-md-6">
+                 <p>Bill Number</p>
+                 <p>M1050695</p>
+                 <div>
+                  <div class="mr">
+                    <p>Due Date</p>
+                    <p>17/05/2020</p>
+                  </div>
+                   <div>
+                     <p>Bill Date</p>
+                     <p>12/04/2020</p>
+                   </div>
+                 </div>
+                </div>
+                <div class="col-md-3">
+                  <h5>4,56,343</h5>
                 </div>
               </div>
+            </div>
+          </div> -->
+          <div class="d-flex flex-wrap flex-row bd-highlight mb-3">
+            <div class="p-2 bd-highlight">
+              <h6>Deccean Cements Ltd</h6>
+            </div>
+            <div class="p2 bd-highlight">
+              <p class="text-grey">Bill Number</p>
+              <p class="text-sm-bold">M1050695</p>
+              <div class="d-flex flex-row">
+                <div>
+                  <p class="text-grey">Bill Date</p>
+                  <p class="text-sm-bold">12/04/2020</p>
+                </div>
+                <div>
+                  <p class="text-grey">Due Date</p>
+                  <p class="text-sm-bold">17/05/2020</p>
+                </div>
+              </div>
+            </div>
+            <div class="ml-auto p-2 bd-highlight">
+              <h5 class="text-blue">4,56,325</h5>
+            </div>
+          </div>
         </div>
+        </div>
+        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+          <table class="table table-bordered table-striped mb-0">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        
         </div>
     </div>
 </div>

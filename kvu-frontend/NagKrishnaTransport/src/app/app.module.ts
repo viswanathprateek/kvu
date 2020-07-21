@@ -9,14 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { LRComponent } from './lr/lr.component';
+import { CreateLRComponent } from './createLR/createLR.component';
+import { LRListComponent } from './lrlist/lrlist.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    LRComponent
+    CreateLRComponent,
+    LRListComponent
   ],
   imports: [
     BrowserModule,

@@ -45,13 +45,4 @@ export class AppComponent {
   logout(){
     this.isLoggedIn = false
   }
-
-  toggleNavbar(){
-    var toggleDiv = document.getElementById("navbarToggler")
-    if (!toggleDiv.classList.contains("show")) {
-      toggleDiv.classList.add("show")
-    }else{
-      toggleDiv.classList.remove("show")
-    }
-  }
 }

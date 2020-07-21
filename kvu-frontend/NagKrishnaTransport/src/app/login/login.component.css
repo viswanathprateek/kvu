@@ -70,11 +70,11 @@
     background-color: darkslategrey;
   }
 }
-@media only screen and (min-height: 736px) {
+/* @media only screen and (min-height: 736px) {
     .email-login,.email-signup{
       margin-top: 15vmax;
     }
-}
+} */
 
   .u-form-group input:focus{
     border-color: #358efb;

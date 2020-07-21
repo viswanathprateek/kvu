@@ -1,0 +1,24 @@
+{
+    "BillList":[
+        {
+            "billNo": "M1050695",
+            "companyName": "Deccan Cements",
+            "billAmount": "3,57,987",
+            "billDate": "17/04/2020",
+            "dueDate": "19/05/2020",
+            "lrList": ["1201","1208", "1202", "1203", "1207"],
+            "isPending": false,
+            "isDue":  false
+        },
+        {
+            "billNo": "M1050697",
+            "companyName": "Bharath Cement",
+            "billAmount": "2,08,564",
+            "billDate": "21/04/2020",
+            "dueDate": "30/05/2020",
+            "lrList": ["1205","1206"],
+            "isPending": false,
+            "isDue":  false
+        }
+    ]
+}

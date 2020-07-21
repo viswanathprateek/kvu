@@ -1,0 +1,96 @@
+{
+    "LRList": [
+        {
+            "lrNo": "1201",
+            "companyName": "Deccen Cements",
+            "truckNo": "TS07EC1234",
+            "quantity": "34.5",
+            "lrDate": "12/04/2020",
+            "billNo": "M1050695",
+            "isPending": false,
+            "isDue": false
+        },
+        {
+            "lrNo": "1208",
+            "companyName": "Deccen Cements",
+            "truckNo": "TS07EC1249",
+            "quantity": "38.5",
+            "lrDate": "12/04/2020",
+            "billNo": "M1050695",
+            "isPending": false,
+            "isDue": false
+        },
+        {
+            "lrNo": "1202",
+            "companyName": "Deccen Cements",
+            "truckNo": "TS07EC1254",
+            "quantity": "36.5",
+            "lrDate": "12/04/2020",
+            "billNo": "M1050695",
+            "isPending": false,
+            "isDue": false
+        },
+        {
+            "lrNo": "1203",
+            "companyName": "Deccen Cements",
+            "truckNo": "TS07EC1434",
+            "quantity": "31.0",
+            "lrDate": "12/04/2020",
+            "billNo": "M1050695",
+            "isPending": false,
+            "isDue": false
+        },
+        {
+            "lrNo": "1204",
+            "companyName": "Deccen Cements",
+            "truckNo": "TS07AG7584",
+            "quantity": "34.5",
+            "lrDate": "15/04/2020",
+            "billNo": "N/A",
+            "isPending": true,
+            "isDue": false
+        },
+        {
+            "lrNo": "1209",
+            "companyName": "Sree Chakra Cements",
+            "truckNo": "TS07EC1984",
+            "quantity": "36.58",
+            "lrDate": "04/04/2020",
+            "billNo": "N/A",
+            "isPending": false,
+            "isDue": true
+        },
+        {
+            "lrNo": "1205",
+            "companyName": "Bharth Cement",
+            "truckNo": "TS07SE1234",
+            "quantity": "34.5",
+            "lrDate": "15/04/2020",
+            "billNo": "M1050697",
+            "isPending": false,
+            "isDue": false
+        },
+        {
+            "lrNo": "1206",
+            "companyName": "Bharath Cement",
+            "truckNo": "TS07JK9899",
+            "quantity": "33.7",
+            "lrDate": "12/04/2020",
+            "billNo": "M1050697",
+            "isPending": false,
+            "isDue": false
+        },
+        {
+            "lrNo": "1207",
+            "companyName": "Deccen Cements",
+            "truckNo": "TS07EC1234",
+            "quantity": "34.5",
+            "lrDate": "12/04/2020",
+            "billNo": "M1050695",
+            "isPending": false,
+            "isDue": false
+        }
+
+
+    ]
+}
