@@ -1,5 +1,59 @@
 <div class="container">
-  <button class="btn btn-sm btn-primary create-bill-btn" data-toggle="modal" data-target="#createBillModal">Create Bill</button>
+  <div class="form-inline">
+    <button class="btn btn-sm btn-primary create-bill-btn" data-toggle="modal" data-target="#createBillModal">Create Bill</button>
+    <input class="form-control ml-auto mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button><mat-icon aria-hidden="false" aria-label="Example home icon" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">filter_alt</mat-icon>
+  </div>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Company Name
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-selection-list #companies>
+            <mat-list-option *ngFor="let company of companiesList">
+              {{company}}
+            </mat-list-option>
+          </mat-selection-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Truck Number
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-selection-list #truckNos>
+            <mat-list-option *ngFor="let truckNo of truckList">
+              {{truckNo}}
+            </mat-list-option>
+          </mat-selection-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Date
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="fromDate">From Date</label>
+              <input type="date" class="form-control" id="fromDate">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="toDate">To Date</label>
+              <input type="date" class="form-control" id="toDate">
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
     <div class="row">
         <div class="col-lg-4" *ngFor="let lr of lrList">
         <app-lr></app-lr>
