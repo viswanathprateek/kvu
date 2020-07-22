@@ -72,6 +72,14 @@
         </button>
       </div>
       <div class="modal-body">
+        <div class="selected-lrs">
+          <h6>Selected LR Numbers</h6>
+          <mat-chip-list class="example-chip" cdkDropListOrientation="horizontal">
+            <mat-chip class="example-box" *ngFor="let lrNo of selectedLRNos">
+              {{lrNo}}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
         <form>
           <div class="form-group">
             <label for="billNo">Bill No</label>
