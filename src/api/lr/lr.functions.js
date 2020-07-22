@@ -19,6 +19,9 @@ function dummy_insertLRDetails(dbName, collectionName, LRDetails) {
 }
 
 function getLatestLRNumber() {
+  /* when integrating with DB this will get you the latest record:
+   * "db.collection.find({}).sort({_id:-1}).limit(1)"
+   */
   const lrNumberFromDB = 123456;
   return lrNumberFromDB + 1;
 }
