@@ -1,47 +1,6 @@
 .container{
     margin-top: 80px;
 }
-.bill-card{
-    margin: 8px;
-}
-.mr{
-    float: right;
-}
-.card-text{
-    font-size: 0.8rem;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.card-body{
-    padding: 0.6rem;
-}
-.card-content{
-    margin: 5px;
-}
-.card-heading{
-    margin: 8px;
-    margin-bottom: 5px;
-    color: white;
-}
-.btn-link{
-    padding: 0px;
-    margin-right: 10px;
-}
-.add-bill-btn{
-    margin: 8px;
-}
-.danger{
-    color: red;
-}
 .create-bill-btn{
     margin: 8px;
-}
-.inProgress{
-    background-color: #ffc107;
-}
-.delay{
-    background-color: #dc3545;
-}
-.completed{
-    background-color: #28a745;
 }

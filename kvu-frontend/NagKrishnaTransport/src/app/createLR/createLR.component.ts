@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-lr',
+  selector: 'app-create-lr',
   templateUrl: './createLR.component.html',
   styleUrls: ['./createLR.component.css']
 })

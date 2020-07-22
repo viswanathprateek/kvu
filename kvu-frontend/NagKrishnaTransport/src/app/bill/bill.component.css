@@ -1,0 +1,65 @@
+.bill-heading{
+    height: 65px;
+    padding: 15px;
+    background-color:#0080FF;
+    color: white;
+
+}
+.example-container {
+    height: 200px;
+    overflow: auto;
+    margin: 8px;
+    border-top: 3px #33AFFF  solid;
+    border-bottom: 1px lightgrey solid;
+}
+table {
+    width: 100%;
+}
+.mat-header-cell{
+    color: #33AFFF ;
+}
+.text-grey{
+    color: grey;
+}
+.text-blue{
+    color: #33AFFF ;
+}
+.p2{
+    padding: 0.5rem;
+    padding-top: 3px;
+    margin-right: 5px;
+}
+.card p{
+    font-size: small;
+    margin: 5px;
+}
+.text-sm-bold{
+    font-size: xx-small;
+    font-weight: 500;
+}
+.text-md-bold{
+    font-size: small;
+    font-weight: 600;
+    color: black;
+}
+.rate-div{
+    width: 10rem;
+    margin: 8px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.paid-stamp{
+    margin: 8px;
+    margin-left: 3vmax;
+}
+.mr{
+    float: right;
+}
+.card-content{
+    margin: 5px;
+    margin-top: 3vmax;
+}
+.lr-link{
+    margin-left: 8px;
+    font-size: small;
+}

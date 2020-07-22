@@ -2,26 +2,7 @@
   <button class="btn btn-sm btn-primary create-bill-btn" data-toggle="modal" data-target="#createBillModal">Create Bill</button>
     <div class="row">
         <div class="col-lg-4" *ngFor="let lr of lrList">
-          <div class="card bill-card delay">
-            <div>
-            <input type="checkbox" class="mr card-heading" id="lrChechbox">
-            <h6 class="card-heading">#1202</h6>
-            </div>  
-              <div class="card card-content">
-                  <div class="card-body">
-                    <div class="mr">
-                    <h6>12/02/2020</h6>
-                    <img src="../../assets/LR logo 1.png" width="100px" height="100px">
-                    </div>
-                    <h6 class="card-title">Deccen Cements Ltd</h6>
-                    <p class="card-text">Truck No: <span><b>TS 07 ES 1233</b></span></p>
-                    <p class="card-text">Quantity: <span><b>34.4</b></span></p>
-                    <p class="card-text">Bill No: <span><b>M1050695</b></span></p>
-                    <button class="btn btn-sm btn-link">Edit</button>
-                    <button class="btn btn-sm btn-link danger">Delete</button>
-                  </div>
-              </div>
-          </div>
+        <app-lr></app-lr>
         </div>
     </div>
 </div>
