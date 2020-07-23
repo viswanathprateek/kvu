@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NetworkService } from '../service/network.service';
+import { Bill } from '../Models/Bill';
 
 @Component({
   selector: 'app-bill-list',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillListComponent implements OnInit {
 
-  billsList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  billsList: Bill[];
 
-  constructor() { }
+  constructor(private service: NetworkService) { }
 
   ngOnInit() {
+    this.service.getBillsList().subscribe((billList) =>{
+      this.billsList = billList["BillList"]
+    })
   }
 
 }

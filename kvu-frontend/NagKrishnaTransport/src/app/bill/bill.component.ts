@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Bill } from '../Models/Bill';
 
 export class LR1{
   position: number
@@ -21,6 +22,8 @@ const ELEMENT_DATA: LR1[] = [
   styleUrls: ['./bill.component.css']
 })
 export class BillComponent implements OnInit {
+
+  @Input() bill: Bill;
 
   displayedColumns = ['position', 'lrNo', 'truckNo', 'quantity'];
   dataSource = ELEMENT_DATA;

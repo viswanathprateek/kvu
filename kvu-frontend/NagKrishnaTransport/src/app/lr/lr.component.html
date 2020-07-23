@@ -1,18 +1,18 @@
-<div class="card bill-card delay">
+<div class="card bill-card" [ngStyle]="{'background-color':!lr.isPending && !lr.isDue ? '#28a745':(lr.isPending?'#ffc107':'#dc3545')}">
     <div>
     <input type="checkbox" class="mr card-heading" id="lrChechbox">
-    <h6 class="card-heading">#1202</h6>
+    <h6 class="card-heading">#{{lr.lrNo}}</h6>
     </div>  
       <div class="card card-content">
           <div class="card-body">
             <div class="mr">
-            <h6>12/02/2020</h6>
-            <img src="../../assets/LR logo 1.png" width="100px" height="100px">
+            <h6>{{lr.lrDate}}</h6>
+            <img class="attached-img" *ngIf="!lr.isPending && !lr.isDue" src="../../assets/Attached stamp.png" width="70px" height="70px">
             </div>
-            <h6 class="card-title">Deccen Cements Ltd</h6>
-            <p class="card-text">Truck No: <span><b>TS 07 ES 1233</b></span></p>
-            <p class="card-text">Quantity: <span><b>34.4</b></span></p>
-            <p class="card-text">Bill No: <span><b>M1050695</b></span></p>
+            <h6 class="card-title">{{lr.companyName}}</h6>
+            <p class="card-text">Truck No: <span><b>{{lr.truckNo}}</b></span></p>
+            <p class="card-text">Quantity: <span><b>{{lr.quantity}}</b></span></p>
+            <p class="card-text">Bill No: <span><b>{{lr.billNo}}</b></span></p>
             <button class="btn btn-sm btn-link">Edit</button>
             <button class="btn btn-sm btn-link danger">Delete</button>
           </div>

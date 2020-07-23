@@ -27,12 +27,6 @@
 .danger{
     color: red;
 }
-.inProgress{
-    background-color: #ffc107;
-}
-.delay{
-    background-color: #dc3545;
-}
-.completed{
-    background-color: #28a745;
+.attached-img{
+    margin-top: 1.5vmax;
 }

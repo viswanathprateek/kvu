@@ -2,7 +2,7 @@
     "BillList":[
         {
             "billNo": "M1050695",
-            "companyName": "Deccan Cements",
+            "companyName": "Deccan Cements Ltd",
             "billAmount": "3,57,987",
             "billDate": "17/04/2020",
             "dueDate": "19/05/2020",
@@ -17,7 +17,7 @@
             "billDate": "21/04/2020",
             "dueDate": "30/05/2020",
             "lrList": ["1205","1206"],
-            "isPending": false,
+            "isPending": true,
             "isDue":  false
         }
     ]

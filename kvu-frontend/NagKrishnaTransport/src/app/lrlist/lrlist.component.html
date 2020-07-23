@@ -1,11 +1,12 @@
 <div class="container">
   <div class="form-inline">
     <button class="btn btn-sm btn-primary create-bill-btn" data-toggle="modal" data-target="#createBillModal">Create Bill</button>
-    <input class="form-control ml-auto mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control ml-auto mr-sm-2" type="search" placeholder="Enter LR No" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button><mat-icon aria-hidden="false" aria-label="Example home icon" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">filter_alt</mat-icon>
   </div>
   <div class="collapse" id="collapseExample">
     <div class="card card-body">
+      <h5>Filter</h5>
       <mat-accordion>
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
@@ -24,12 +25,12 @@
                              (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Truck Number
+              Bill Status
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <mat-selection-list #truckNos>
-            <mat-list-option *ngFor="let truckNo of truckList">
-              {{truckNo}}
+          <mat-selection-list #filteredStatus>
+            <mat-list-option *ngFor="let status of billStatus">
+              {{status}}
             </mat-list-option>
           </mat-selection-list>
         </mat-expansion-panel>
@@ -56,7 +57,7 @@
   </div>
     <div class="row">
         <div class="col-lg-4" *ngFor="let lr of lrList">
-        <app-lr></app-lr>
+        <app-lr [lr]=lr></app-lr>
         </div>
     </div>
 </div>

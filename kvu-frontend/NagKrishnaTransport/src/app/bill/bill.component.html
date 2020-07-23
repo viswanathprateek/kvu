@@ -5,24 +5,24 @@
     <div class="bill-body">
     <div class="d-flex flex-wrap flex-row bd-highlight mb-3">
       <div class="p-2 bd-highlight">
-        <h6>Deccean Cements Ltd</h6>
+        <h6>{{bill.companyName}}</h6>
       </div>
       <div class="p2 bd-highlight">
         <p class="text-grey">Bill Number</p>
-        <p class="text-sm-bold">M1050695</p>
+        <p class="text-sm-bold">{{bill.billNo}}</p>
         <div class="d-flex flex-row">
           <div>
             <p class="text-grey">Bill Date</p>
-            <p class="text-sm-bold">12/04/2020</p>
+            <p class="text-sm-bold">{{bill.billDate}}</p>
           </div>
           <div>
             <p class="text-grey">Due Date</p>
-            <p class="text-sm-bold">17/05/2020</p>
+            <p class="text-sm-bold">{{bill.dueDate}}</p>
           </div>
         </div>
       </div>
       <div class="ml-auto p-2 bd-highlight">
-        <h5 class="text-blue">4,56,325</h5>
+        <h5 class="text-blue">{{bill.billAmount}}</h5>
       </div>
     </div>
     <!-- <a class="font-italic lr-link" data-toggle="collapse" href="#collapse{{bill}}" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -63,6 +63,6 @@
       <p class="text-blue"><b>Total Quantity</b> <span class="text-md-bold mr">178.67</span></p>
       <p class="text-blue"><b>Total</b> <span class="text-md-bold mr">4,56,325</span></p>
     </div>
-    <!-- <img class="paid-stamp" src="../../assets/Bill Stamp.png" width="100px" height="100px"> -->
+    <img *ngIf="!bill.isPending && !bill.isDue" class="paid-stamp" src="../../assets/Paid Stamp.png" width="100px" height="100px">
   </div>
   </div>

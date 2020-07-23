@@ -1,6 +1,6 @@
 <div class="container main">
     <div class="row">
         <div class="col-lg-4" *ngFor="let bill of billsList">
-        <app-bill></app-bill>
+        <app-bill [bill] = bill></app-bill>
       </div>
 </div>
