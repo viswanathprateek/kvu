@@ -25,7 +25,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   console.log("vachindi roy")
   console.log(req.connection.remoteAddress);
-  res.send(data)
+  res.send("Sucess Working")
 });
 
 var getData= (database, collections,parameters,resolve,reject) =>{
