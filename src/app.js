@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
-const api = require('./api');
+const api = require('./api/lr');
 
 
 var url = "mongodb://localhost:27017/";
@@ -112,7 +112,7 @@ app.get('/get/:database/:collections/:parameters', (req, res) => {
   });
 });
 
-app.use('/api/v1', api);
+app.use('/api/lr', api);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
