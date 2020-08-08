@@ -2,40 +2,71 @@
 /* eslint-disable no-console */
 const express = require('express');
 const router = express.Router();
+const cors = require('cors');
 const LRFunctions = require('./lr.functions');
 
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+
 router.get('/', async (req, res) => {
-  const { lrNumber } = req.query;
-  let LRDetails = null;
+  const {data} = req.body; 
+  const { offset } = req.body;
+  const { limit } = req.body;
+  const { type } = req.body;
+  new Promise((resolve, reject) => {
+    let LRDetails = null;
   try {
-    LRDetails = await LRFunctions.getLRDetails(lrNumber);
+    LRFunctions.getLRDetails(data , offset, limit, type, resolve,reject);
   } catch (err) {
     console.error("this shouldn't have happened", err);
-  }
-  res.send({ LRDetails });
+  } 
+   }).then(data => {
+     res.send(data);
+   });
 });
 
 router.post('/', async (req, res) => {
-  const { LRDetails } = req.body;
-  let updatedLRList = null;
-  try {
-    updatedLRList = await LRFunctions.insertLRDetails(LRDetails);
-  } catch (err) {
-    console.error("this shouldn't have happened", err);
-  }
-  res.send(updatedLRList);
+
+  new Promise((resolve, reject) => {
+    LRFunctions.getNextSequenceValue(req.body,resolve,reject) 
+  }).then(data => {
+    req.body[0].id=data
+    console.log(req.body)
+    new Promise((resolve, reject) => {
+      LRFunctions.insertLRDetails(req.body,resolve,reject) 
+    }).then(data => {
+      res.send(data);
+    });
+  });
+  
 });
 
-router.put('/', (req, res) => {
-  const { body } = req;
-  console.log({ body });
-  res.send(`Update lr: ${body.lrNumber}`);
+router.patch('/', (req, res) => {
+  new Promise((resolve, reject) => {
+    let LRDetails = null;
+  try {
+    LRFunctions.updateLRDetails(req.body.data,req.body.newvalues ,resolve,reject);
+  } catch (err) {
+    console.error("this shouldn't have happened", err);
+  } 
+   }).then(data => {
+     res.send(data);
+   });
 });
 
 router.delete('/', (req, res) => {
-  const { body } = req;
-  console.log({ body });
-  res.send(`Delete lr: ${body.lrNumber}`);
+  new Promise((resolve, reject) => {
+    let LRDetails = null;
+  try {
+    LRFunctions.deleteLRDetails(req.body ,resolve,reject);
+  } catch (err) {
+    console.error("this shouldn't have happened", err);
+  } 
+   }).then(data => {
+     res.send(data);
+   });
 });
 
 
