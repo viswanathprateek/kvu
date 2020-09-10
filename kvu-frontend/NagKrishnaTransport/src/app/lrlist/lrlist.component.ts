@@ -18,7 +18,8 @@ export class LRListComponent implements OnInit {
 
   ngOnInit() {
     this.service.getLRList().subscribe((lrListData) =>{
-      this.lrList = lrListData["LRList"] 
+      // this.lrList = lrListData["LRList"] 
+      console.log(lrListData)
     })
   }
 

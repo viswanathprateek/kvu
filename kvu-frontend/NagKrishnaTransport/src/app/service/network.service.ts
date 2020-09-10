@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -14,7 +14,8 @@ export class NetworkService {
   }
 
   getLRList(): Observable<any>{
-    return this.http.get("../assets/LRList.json")
+    // return this.http.get("../assets/LRList.json")
+    return this.http.request('GET',"http://192.168.1.10:7000/api/lr/{}/0/50/descending", { responseType:'json'});
   }
 
 }
