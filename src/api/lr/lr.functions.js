@@ -1,11 +1,29 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable func-names */
+const MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+
 
 /* GET LR Details */
-const getLRDetails = function (LRNumber) {
-  // Call the method which gets all the LR Numbers
-  // method_which_gets_LR_numbers('dbName', 'collectionName', {query})
-  return LRNumber;
+const getLRDetails = function (data, offset, limits, type, resolve, reject) {
+  const resultType = {
+    _id: -1
+  };
+  if (type == "ascending") {
+    resultType = {
+      _id: 1
+    };
+  }
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("ML");
+    dbo.collection("LR").find(data).sort(resultType).skip(offset).limit(limits).toArray(function (err, result) {
+      if (err) throw err;
+      db.close();
+      resolve(result);
+    });
+  });
+
 };
 
 exports.getLRDetails = getLRDetails;
@@ -13,25 +31,79 @@ exports.getLRDetails = getLRDetails;
 /* *************************** */
 
 
-/* INSERT LR Details */
-function dummy_insertLRDetails(dbName, collectionName, LRDetails) {
-  return { ...LRDetails };
-}
+const insertLRDetails = function (data, resolve, reject) {
 
-function getLatestLRNumber() {
-  /* when integrating with DB this will get you the latest record:
-   * "db.collection.find({}).sort({_id:-1}).limit(1)"
-   */
-  const lrNumberFromDB = 123456;
-  return lrNumberFromDB + 1;
-}
-
-const insertLRDetails = function (LRDetails) {
-  const LRNumber = getLatestLRNumber();
-  const updatedLRDetails = dummy_insertLRDetails('dbName', 'collectionName', { LRNumber, ...LRDetails });
-  return ({ updatedLRDetails });
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("ML");
+    dbo.collection("LR").insertMany(data, function (err, result) {
+      if (err) throw err;
+      db.close();
+      resolve(result);
+    });
+  });
 };
 
 exports.insertLRDetails = insertLRDetails;
 
 /* *************************** */
+
+const getNextSequenceValue = (data, resolve, reject) => {
+
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("ML");
+    dbo.collection("LR").find({}).sort({
+      _id: -1
+    }).limit(1).toArray(function (err, result) {
+      if (err) throw err;
+      db.close();
+      console.log(result)
+      if (result.length == 0) {
+        resolve(result.push({
+          "id": 1
+        }));
+      } else {
+        resolve(result[0].id + 1);
+      }
+    });
+  });
+}
+exports.getNextSequenceValue = getNextSequenceValue;
+
+/* *************************** */
+
+
+const deleteLRDetails = (data, resolve, reject) => {
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("ML");
+    dbo.collection("LR").deleteMany(data, function (err, result) {
+      if (err) throw err;
+      db.close();
+      resolve(result);
+    });
+  });
+}
+
+exports.deleteLRDetails = deleteLRDetails;
+
+/* *************************** */
+
+
+const updateLRDetails = (data, newvalues, resolve, reject) => {
+  newvalues = {
+    $set: newvalues
+  }
+  MongoClient.connect(url, function (err, db) {
+    if (err) throw err;
+    var dbo = db.db("ML");
+    dbo.collection("LR").updateMany(data, newvalues, function (err, result) {
+      if (err) throw err;
+      db.close();
+      resolve(result);
+    });
+  });
+}
+
+exports.updateLRDetails = updateLRDetails;

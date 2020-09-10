@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
-const api = require('./api');
+const api = require('./api/lr');
 
 
 var url = "mongodb://localhost:27017/";
@@ -25,7 +25,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   console.log("vachindi roy")
   console.log(req.connection.remoteAddress);
-  res.send(data)
+  res.send("Sucess Working")
 });
 
 var getData= (database, collections,parameters,resolve,reject) =>{
@@ -112,7 +112,7 @@ app.get('/get/:database/:collections/:parameters', (req, res) => {
   });
 });
 
-app.use('/api/v1', api);
+app.use('/api/lr', api);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
